@@ -4,25 +4,25 @@ import { useEffect, useState, useRef } from "react";
 
 const metrics = [
   { 
-    value: 12847392, 
+    value: 2847, 
+    suffix: "L", 
+    prefix: "",
+    label: "Water optimized today",
+    sublabel: "across monitored gardens",
+  },
+  { 
+    value: 95, 
+    suffix: "%", 
+    prefix: "",
+    label: "Plant health score",
+    sublabel: "real-time assessment",
+  },
+  { 
+    value: 847, 
     suffix: "", 
     prefix: "",
-    label: "Tasks completed today",
-    sublabel: "by 23,847 active agents",
-  },
-  { 
-    value: 99, 
-    suffix: ".99%", 
-    prefix: "",
-    label: "Availability",
-    sublabel: "across all regions",
-  },
-  { 
-    value: 340, 
-    suffix: "ms", 
-    prefix: "<",
-    label: "Average execution",
-    sublabel: "p99 latency",
+    label: "AI decisions today",
+    sublabel: "automated responses",
   },
 ];
 
@@ -259,9 +259,9 @@ export function MetricsSection() {
             <h2 className={`text-6xl md:text-7xl lg:text-[140px] font-display tracking-tight leading-[0.95] transition-all duration-1000 ${
               isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
             }`}>
-              Real-time
+              Live garden
               <br />
-              <span className="text-muted-foreground">agent metrics.</span>
+              <span className="text-muted-foreground">intelligence.</span>
             </h2>
           </div>
         </div>
@@ -328,11 +328,11 @@ export function MetricsSection() {
         <div className={`mt-16 pt-8 border-t border-foreground/10 flex flex-wrap items-center gap-x-12 gap-y-4 text-sm font-mono text-muted-foreground transition-all duration-1000 delay-500 ${
           isVisible ? "opacity-100" : "opacity-0"
         }`}>
-          <span>OpenAI GPT-4 Turbo</span>
-          <span>Anthropic Claude 3</span>
-          <span>Mistral Large</span>
-          <span>Llama 3</span>
-          <span className="text-foreground">+12 more models</span>
+          <span>Soil Analysis</span>
+          <span>Weather Integration</span>
+          <span>Growth Tracking</span>
+          <span>Disease Detection</span>
+          <span className="text-foreground">+8 more sensors</span>
         </div>
       </div>
     </section>

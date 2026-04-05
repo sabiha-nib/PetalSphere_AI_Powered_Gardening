@@ -6,26 +6,26 @@ import { Shield, Lock, Eye, FileCheck } from "lucide-react";
 const securityFeatures = [
   {
     icon: Shield,
-    title: "Isolated execution",
-    description: "Each agent runs in its own secure sandbox.",
+    title: "Data protection",
+    description: "Your garden data is encrypted and secure.",
     image: "/images/isolated.jpg",
   },
   {
     icon: Lock,
-    title: "Encrypted memory",
-    description: "Data encrypted at rest and in transit.",
+    title: "Privacy first",
+    description: "Sensor data stays local and protected.",
     image: "/images/encrypted.jpg",
   },
   {
     icon: Eye,
-    title: "Full audit trails",
-    description: "Every action logged and inspectable.",
+    title: "Transparent AI",
+    description: "Every decision is explainable and logged.",
     image: "/images/audit.jpg",
   },
   {
     icon: FileCheck,
-    title: "Permission boundaries",
-    description: "Principle of least privilege by design.",
+    title: "User control",
+    description: "You decide what the AI can automate.",
     image: "/images/permissions.jpg",
   },
 ];
@@ -74,9 +74,9 @@ export function SecuritySection() {
           <h2 className={`text-6xl md:text-7xl lg:text-[128px] font-display tracking-tight leading-[0.9] mb-12 transition-all duration-1000 ${
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
           }`}>
-            Autonomous,
+            Intelligent,
             <br />
-            <span className="text-muted-foreground">not uncontrolled.</span>
+            <span className="text-muted-foreground">yet trustworthy.</span>
           </h2>
           
           {/* Description — below title */}
@@ -84,7 +84,7 @@ export function SecuritySection() {
             isVisible ? "opacity-100" : "opacity-0"
           }`}>
             <p className="text-xl text-muted-foreground leading-relaxed max-w-2xl">
-              Your agents are powerful but constrained. Enterprise-grade security ensures they only do what you allow.
+              AI garden systems are powerful yet transparent. You maintain full control over automation decisions.
             </p>
           </div>
         </div>
@@ -111,8 +111,8 @@ export function SecuritySection() {
             <div className="relative z-10">
               <span className="font-mono text-sm text-muted-foreground">Active protection</span>
               <div className="mt-8">
-                <span className="text-7xl lg:text-8xl font-display">0</span>
-                <span className="block text-muted-foreground mt-2">Security incidents this year</span>
+                <span className="text-7xl lg:text-8xl font-display">100%</span>
+                <span className="block text-muted-foreground mt-2">Transparent AI decisions</span>
               </div>
             </div>
             

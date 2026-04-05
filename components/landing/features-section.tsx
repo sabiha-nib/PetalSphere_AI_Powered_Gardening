@@ -5,27 +5,27 @@ import { useEffect, useRef, useState } from "react";
 const features = [
   {
     number: "01",
-    title: "Autonomous Execution",
-    description: "Deploy AI agents that work independently. They analyze, decide, and execute complex multi-step tasks without human intervention.",
-    stats: { value: "99.7%", label: "task completion" },
+    title: "Smart Irrigation",
+    description: "AI-powered water management that responds to real-time soil moisture, weather forecasts, and plant needs. Delivers precise hydration exactly when required.",
+    stats: { value: "40%", label: "water savings" },
   },
   {
     number: "02",
-    title: "Distributed Computing",
-    description: "Offload compute-heavy tasks to our global network. Your agents run on optimized infrastructure across 50+ regions worldwide.",
-    stats: { value: "50+", label: "global regions" },
+    title: "Plant Health Detection",
+    description: "Computer vision algorithms scan leaves and stems to identify diseases, nutrient deficiencies, and pest damage before they become visible to the human eye.",
+    stats: { value: "95%", label: "early detection" },
   },
   {
     number: "03",
-    title: "Multi-Agent Orchestration",
-    description: "Coordinate teams of specialized agents. They communicate, delegate, and collaborate to solve complex problems together.",
-    stats: { value: "1000x", label: "parallel execution" },
+    title: "Climate Monitoring",
+    description: "Continuous environmental sensing tracks temperature, humidity, light levels, and air quality to create optimal growing conditions.",
+    stats: { value: "24/7", label: "monitoring" },
   },
   {
     number: "04",
-    title: "Secure Sandboxing",
-    description: "Each agent runs in isolated environments. Full audit trails, encrypted execution, and zero data leakage between tasks.",
-    stats: { value: "0", label: "data breaches" },
+    title: "Growth Prediction",
+    description: "Machine learning models analyze historical data and current conditions to forecast harvest times, yield estimates, and optimal planting schedules.",
+    stats: { value: "92%", label: "accuracy" },
   },
 ];
 
@@ -158,23 +158,23 @@ export function FeaturesSection() {
             <div className="lg:col-span-7">
               <span className="inline-flex items-center gap-3 text-sm font-mono text-muted-foreground mb-6">
                 <span className="w-12 h-px bg-foreground/30" />
-                Capabilities
+                Foundations
               </span>
               <h2
                 className={`text-6xl md:text-7xl lg:text-[128px] font-display tracking-tight leading-[0.9] transition-all duration-1000 ${
                   isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
                 }`}
               >
-                Intelligent
+                Smart
                 <br />
-                <span className="text-muted-foreground">workers.</span>
+                <span className="text-muted-foreground">gardening.</span>
               </h2>
             </div>
             <div className="lg:col-span-5 lg:pb-4">
               <p className={`text-xl text-muted-foreground leading-relaxed transition-all duration-1000 delay-200 ${
                 isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
               }`}>
-                Deploy autonomous AI agents that execute complex tasks across distributed infrastructure. No supervision required.
+                Discover how artificial intelligence transforms gardens through data, automation, and adaptive systems that work with nature.
               </p>
             </div>
           </div>

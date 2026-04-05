@@ -66,18 +66,18 @@ const logos: Record<string, React.ReactNode> = {
 };
 
 const integrations = [
-  { name: "OpenAI", category: "LLM" },
-  { name: "Anthropic", category: "LLM" },
-  { name: "Slack", category: "Comms" },
-  { name: "GitHub", category: "Code" },
-  { name: "Jira", category: "PM" },
+  { name: "OpenAI", category: "Vision" },
+  { name: "Anthropic", category: "Analysis" },
+  { name: "Slack", category: "Alerts" },
+  { name: "GitHub", category: "Data" },
+  { name: "Jira", category: "Tasks" },
   { name: "AWS S3", category: "Storage" },
-  { name: "Google Drive", category: "Docs" },
+  { name: "Google Drive", category: "Reports" },
   { name: "Salesforce", category: "CRM" },
-  { name: "HubSpot", category: "Marketing" },
+  { name: "HubSpot", category: "Insights" },
   { name: "Zapier", category: "Auto" },
   { name: "Snowflake", category: "Data" },
-  { name: "Stripe", category: "Payments" },
+  { name: "Stripe", category: "Commerce" },
 ];
 
 export function IntegrationsSection() {
@@ -114,15 +114,15 @@ export function IntegrationsSection() {
         <h2 className={`text-6xl md:text-7xl lg:text-[128px] font-display tracking-tight leading-[0.9] transition-all duration-1000 ${
           isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
         }`}>
-          Connect
+          Connected
           <br />
-          <span className="text-muted-foreground">everything.</span>
+          <span className="text-muted-foreground">ecosystem.</span>
         </h2>
 
         <p className={`mt-8 text-xl text-muted-foreground leading-relaxed max-w-lg mx-auto transition-all duration-1000 delay-100 ${
           isVisible ? "opacity-100" : "opacity-0"
         }`}>
-          Your agents connect to 100+ tools and services. They read, write, and act autonomously across your entire stack.
+          Your garden connects to sensors, AI models, cloud systems, and apps. Data flows seamlessly across your entire growing ecosystem.
         </p>
       </div>
 
@@ -210,9 +210,9 @@ export function IntegrationsSection() {
         }`}>
           <div className="flex flex-wrap gap-12">
             {[
-              { value: "100+", label: "Integrations" },
-              { value: "OAuth", label: "Auth built-in" },
-              { value: "Webhooks", label: "Real-time sync" },
+              { value: "30+", label: "Sensor types" },
+              { value: "Cloud", label: "Data sync" },
+              { value: "Real-time", label: "Updates" },
             ].map((stat) => (
               <div key={stat.label} className="flex items-baseline gap-3">
                 <span className="text-3xl font-display">{stat.value}</span>
@@ -222,7 +222,7 @@ export function IntegrationsSection() {
           </div>
 
           <a href="#" className="group inline-flex items-center gap-2 text-sm font-mono text-muted-foreground hover:text-foreground transition-colors">
-            View all integrations
+            View all connections
             <span className="group-hover:translate-x-1 transition-transform">&rarr;</span>
           </a>
         </div>

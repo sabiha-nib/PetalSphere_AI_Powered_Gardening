@@ -4,20 +4,20 @@ import { useState, useEffect, useRef } from "react";
 
 const features = [
   { 
-    title: "TypeScript native", 
-    description: "Full type safety for agent configs and responses."
+    title: "Real-time monitoring", 
+    description: "Watch your garden data flow and AI decisions live."
   },
   { 
-    title: "Streaming results", 
-    description: "Watch your agents think and act in real-time."
+    title: "Historical analysis", 
+    description: "Track growth patterns and optimize over seasons."
   },
   { 
-    title: "Multi-model support", 
-    description: "OpenAI, Anthropic, Mistral, or bring your own."
+    title: "Custom automation", 
+    description: "Create rules that match your garden's unique needs."
   },
   { 
-    title: "Local debugging", 
-    description: "Test agents locally before deploying to cloud."
+    title: "Mobile access", 
+    description: "Monitor and control your garden from anywhere."
   },
 ];
 
@@ -68,12 +68,12 @@ export function DevelopersSection() {
         >
           <span className="inline-flex items-center gap-3 text-sm font-mono text-muted-foreground mb-6">
             <span className="w-8 h-px bg-foreground/30" />
-            Developer SDK
+            Data in Motion
           </span>
           <h2 className="text-6xl md:text-7xl lg:text-[128px] font-display tracking-tight leading-[0.9]">
-            Code your agents.
+            See your garden.
             <br />
-            <span className="text-muted-foreground">Or let them code.</span>
+            <span className="text-muted-foreground">Understand the data.</span>
           </h2>
         </div>
 
@@ -84,8 +84,8 @@ export function DevelopersSection() {
           }`}
         >
           <p className="text-xl text-muted-foreground mb-12 leading-relaxed max-w-md">
-            A powerful SDK for building, deploying, and orchestrating AI agents. 
-            Define behaviors in code or natural language.
+            Interactive dashboards show environmental trends, plant health scores, 
+            and AI decisions in real-time visual displays.
           </p>
           <div className="grid grid-cols-2 gap-6">
             {features.map((feature, index) => (

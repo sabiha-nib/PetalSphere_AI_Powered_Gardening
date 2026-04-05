@@ -1,60 +1,40 @@
 "use client";
 
-import { useState, useEffect, useRef } from "react";
-import { ArrowRight, Check, Zap } from "lucide-react";
+import { useEffect, useRef, useState } from "react";
+import { Droplets, Sprout, Globe, Utensils } from "lucide-react";
 
-const plans = [
+const reasons = [
   {
-    name: "Explorer",
-    description: "For tinkering and small automations",
-    price: { monthly: 0, annual: 0 },
-    features: [
-      "3 concurrent agents",
-      "1,000 tasks/month",
-      "Community support",
-      "Basic logging",
-      "Public integrations",
-    ],
-    cta: "Start free",
-    highlight: false,
+    icon: Droplets,
+    title: "Saves Water",
+    description: "AI-optimized irrigation reduces water usage by up to 40% while maintaining optimal plant health through precise moisture management.",
+    stat: "40%",
+    statLabel: "less water",
   },
   {
-    name: "Builder",
-    description: "For teams shipping with agents",
-    price: { monthly: 79, annual: 65 },
-    features: [
-      "25 concurrent agents",
-      "50,000 tasks/month",
-      "Priority support",
-      "Full audit trails",
-      "Private integrations",
-      "Team workspaces",
-      "Custom agent roles",
-    ],
-    cta: "Start trial",
-    highlight: true,
+    icon: Sprout,
+    title: "Improves Agriculture",
+    description: "Smart farming techniques powered by machine learning increase crop yields, reduce waste, and enable year-round growing in controlled environments.",
+    stat: "25%",
+    statLabel: "higher yields",
   },
   {
-    name: "Scale",
-    description: "For agent-first organizations",
-    price: { monthly: null, annual: null },
-    features: [
-      "Unlimited agents",
-      "Unlimited tasks",
-      "24/7 dedicated support",
-      "On-premise deployment",
-      "SLA guarantee",
-      "Custom LLM routing",
-      "Advanced security",
-      "Dedicated compute",
-    ],
-    cta: "Contact sales",
-    highlight: false,
+    icon: Globe,
+    title: "Supports Sustainability",
+    description: "Reduced resource consumption, minimized chemical usage, and optimized energy use contribute to more environmentally responsible food production.",
+    stat: "60%",
+    statLabel: "less chemicals",
+  },
+  {
+    icon: Utensils,
+    title: "Helps Food Systems",
+    description: "Scalable AI gardening solutions can transform local and global food production, making fresh produce more accessible and reducing supply chain dependencies.",
+    stat: "3x",
+    statLabel: "local produce",
   },
 ];
 
 export function PricingSection() {
-  const [isAnnual, setIsAnnual] = useState(true);
   const [isVisible, setIsVisible] = useState(false);
   const sectionRef = useRef<HTMLElement>(null);
 
@@ -73,146 +53,78 @@ export function PricingSection() {
   return (
     <section id="pricing" ref={sectionRef} className="relative py-32 lg:py-40">
       <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
-        {/* Header - Dramatic offset */}
+        {/* Header */}
         <div className="grid lg:grid-cols-12 gap-8 mb-20">
           <div className="lg:col-span-7">
             <span className="inline-flex items-center gap-3 text-sm font-mono text-muted-foreground mb-8">
               <span className="w-12 h-px bg-foreground/30" />
-              Pricing
+              Why It Matters
             </span>
-            <h2 className={`text-6xl md:text-7xl lg:text-[128px] font-display tracking-tight leading-[0.9] transition-all duration-1000 ${
+            <h2 className={`text-6xl md:text-7xl lg:text-[100px] font-display tracking-tight leading-[0.9] transition-all duration-1000 ${
               isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
             }`}>
-              Pay for
+              Growing a
               <br />
-              <span className="text-stroke">results.</span>
+              <span className="text-muted-foreground">better future.</span>
             </h2>
           </div>
           
-          <div className="lg:col-span-5 relative p-0 h-96 lg:h-auto">
-            {/* Whale image */}
+          <div className="lg:col-span-5 relative p-0 h-80 lg:h-auto">
             <div className={`absolute inset-0 pointer-events-none transition-all duration-1000 delay-100 ${
               isVisible ? "opacity-100" : "opacity-0"
             }`}>
               <img
                 src="/images/whale.png"
-                alt="Organic whale"
+                alt="Organic form"
                 className="w-full h-full object-contain object-center"
               />
             </div>
-
           </div>
         </div>
 
-        {/* Pricing cards - Horizontal layout with overlap */}
-        <div className="relative">
-          <div className="grid lg:grid-cols-3 gap-4 lg:gap-0">
-            {plans.map((plan, index) => (
-              <div
-                key={plan.name}
-                className={`relative bg-background border transition-all duration-700 ${
-                  plan.highlight 
-                    ? "border-foreground lg:-mx-2 lg:z-10 lg:scale-105" 
-                    : "border-foreground/10 lg:first:-mr-2 lg:last:-ml-2"
-                } ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-12"}`}
-                style={{ transitionDelay: `${index * 100}ms` }}
-              >
-                {/* Popular badge */}
-                {plan.highlight && (
-                  <div className="absolute -top-4 left-8 right-8 flex justify-center">
-                    <span className="inline-flex items-center gap-2 px-4 py-2 bg-foreground text-background text-xs font-mono uppercase tracking-widest">
-                      <Zap className="w-3 h-3" />
-                      Most Popular
-                    </span>
-                  </div>
-                )}
-
-                <div className="p-8 lg:p-10">
-                  {/* Plan header */}
-                  <div className="mb-8 pb-8 border-b border-foreground/10">
-                    <span className="font-mono text-xs text-muted-foreground">
-                      {String(index + 1).padStart(2, "0")}
-                    </span>
-                    <h3 className="text-2xl lg:text-3xl font-display mt-2">{plan.name}</h3>
-                    <p className="text-sm text-muted-foreground mt-2">{plan.description}</p>
-                  </div>
-
-                  {/* Price */}
-                  <div className="mb-8">
-                    {plan.price.monthly !== null ? (
-                      <div className="flex items-baseline gap-2">
-                        <span className="text-5xl lg:text-6xl font-display">
-                          ${isAnnual ? plan.price.annual : plan.price.monthly}
-                        </span>
-                        <span className="text-muted-foreground text-sm">/month</span>
-                      </div>
-                    ) : (
-                      <span className="text-4xl font-display">Custom</span>
-                    )}
-                    {plan.price.monthly !== null && plan.price.monthly > 0 && (
-                      <p className="text-xs text-muted-foreground mt-2 font-mono">
-                        {isAnnual ? "billed annually" : "billed monthly"}
-                      </p>
-                    )}
-                  </div>
-
-                  {/* Features */}
-                  <ul className="space-y-3 mb-10">
-                    {plan.features.map((feature) => (
-                      <li key={feature} className="flex items-start gap-3">
-                        <Check className="w-4 h-4 text-[#eca8d6] mt-0.5 shrink-0" />
-                        <span className="text-sm text-muted-foreground">{feature}</span>
-                      </li>
-                    ))}
-                  </ul>
-
-                  {/* CTA */}
-                  <button
-                    className={`w-full py-4 flex items-center justify-center gap-2 text-sm font-medium transition-all group ${
-                      plan.highlight
-                        ? "bg-foreground text-background hover:bg-foreground/90"
-                        : "border border-foreground/20 text-foreground hover:border-foreground hover:bg-foreground/5"
-                    }`}
-                  >
-                    {plan.cta}
-                    <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
-                  </button>
-                </div>
+        {/* Impact cards */}
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          {reasons.map((reason, index) => (
+            <div
+              key={reason.title}
+              className={`group p-8 border border-foreground/10 hover:border-foreground/30 bg-foreground/[0.02] transition-all duration-500 ${
+                isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+              }`}
+              style={{ transitionDelay: `${index * 100}ms` }}
+            >
+              {/* Icon */}
+              <div className="w-12 h-12 flex items-center justify-center border border-foreground/20 group-hover:border-foreground group-hover:bg-foreground group-hover:text-background transition-all duration-300 mb-6">
+                <reason.icon className="w-6 h-6" />
               </div>
-            ))}
-          </div>
+
+              {/* Stat */}
+              <div className="mb-4">
+                <span className="text-4xl font-display text-[#eca8d6]">{reason.stat}</span>
+                <span className="block text-sm text-muted-foreground font-mono mt-1">{reason.statLabel}</span>
+              </div>
+
+              {/* Content */}
+              <h3 className="text-xl font-display mb-3">{reason.title}</h3>
+              <p className="text-sm text-muted-foreground leading-relaxed">{reason.description}</p>
+            </div>
+          ))}
         </div>
 
-        {/* Bottom note with icons */}
-        <div className={`mt-20 flex flex-col lg:flex-row lg:items-center lg:justify-between gap-8 pt-12 border-t border-foreground/10 transition-all duration-1000 delay-500 ${
+        {/* Fun fact callout */}
+        <div className={`mt-16 p-8 lg:p-12 border border-[#eca8d6]/30 bg-[#eca8d6]/5 transition-all duration-1000 delay-500 ${
           isVisible ? "opacity-100" : "opacity-0"
         }`}>
-          <div className="flex flex-wrap gap-6 text-sm text-muted-foreground">
-            <span className="flex items-center gap-2">
-              <Check className="w-4 h-4 text-[#eca8d6]" />
-              Encrypted execution
-            </span>
-            <span className="flex items-center gap-2">
-              <Check className="w-4 h-4 text-[#eca8d6]" />
-              Full audit logs
-            </span>
-            <span className="flex items-center gap-2">
-              <Check className="w-4 h-4 text-[#eca8d6]" />
-              Multi-model routing
-            </span>
+          <div className="flex flex-col lg:flex-row items-start lg:items-center gap-6 lg:gap-12">
+            <div className="shrink-0">
+              <span className="text-sm font-mono text-[#eca8d6] uppercase tracking-widest">Research Insight</span>
+            </div>
+            <p className="text-xl lg:text-2xl font-display text-foreground/90 leading-relaxed">
+              AI irrigation systems can reduce water waste by up to 40% compared to traditional timer-based methods, 
+              while simultaneously improving plant health and crop yields.
+            </p>
           </div>
-          <a href="#" className="text-sm underline underline-offset-4 hover:text-foreground transition-colors">
-            Compare all features
-          </a>
         </div>
       </div>
-
-      <style jsx>{`
-        .text-stroke {
-          -webkit-text-stroke: 1.5px currentColor;
-          -webkit-text-fill-color: transparent;
-        }
-      `}</style>
     </section>
   );
 }
