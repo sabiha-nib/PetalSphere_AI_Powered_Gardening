@@ -160,8 +160,8 @@ export function ResearchContextSection() {
             }`}
           >
             <Image
-              src="/images/whale.png"
-              alt="Organic data flows"
+              src="/images/connected-trees.png"
+              alt="Nature and technology connection"
               fill
               className="object-contain object-center group-hover:scale-110 transition-transform duration-700"
             />

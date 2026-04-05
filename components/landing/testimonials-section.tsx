@@ -226,10 +226,10 @@ export function TestimonialsSection() {
         <div className={`mt-20 transition-all duration-1000 delay-500 ${isVisible ? "opacity-100" : "opacity-0"}`}>
           <div className="relative h-64 lg:h-80 rounded-lg overflow-hidden">
             <Image
-              src="/images/robot-garden.png"
-              alt="AI-assisted garden visualization"
+              src="/images/whale.png"
+              alt="Neural lotus network"
               fill
-              className="object-cover object-center"
+              className="object-contain object-center"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-foreground via-transparent to-transparent" />
           </div>
