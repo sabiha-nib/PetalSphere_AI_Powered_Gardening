@@ -81,8 +81,8 @@ export function PricingSection() {
               {/* Animated glow ring */}
               <div className="absolute inset-0 rounded-full bg-gradient-to-r from-[#eca8d6]/30 via-[#7dd3fc]/30 to-[#eca8d6]/30 blur-xl animate-pulse" />
               <img
-                src="/images/connected-trees.png"
-                alt="Neural lotus"
+src="/images/lotus-neural.png"
+          alt="AI Assistant"
                 className="relative w-full h-full object-contain"
               />
             </div>
@@ -205,7 +205,7 @@ export function PricingSection() {
         
         {/* The image */}
         <img
-          src="/images/garden-bonsai.png"
+          src="/images/robot-mascot.png"
           alt="Living garden ecosystem with glowing connections"
           className="relative w-full h-auto max-h-[500px] object-cover object-center"
         />

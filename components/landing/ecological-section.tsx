@@ -101,7 +101,7 @@ export function EcologicalSection() {
             }`}
           >
             <Image
-              src="/images/robot-garden.png"
+              src="/images/connected-trees.png"
               alt="Bridging ecosystems"
               fill
               className="object-cover object-center"

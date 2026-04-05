@@ -287,7 +287,7 @@ export function FeaturesSection() {
           isVisible ? "opacity-100" : "opacity-0"
         }`}>
           <Image
-            src="/images/connected-trees.png"
+            src="/images/organic-hands.png"
             alt="AI-powered garden monitoring"
             fill
             className="object-cover object-center"

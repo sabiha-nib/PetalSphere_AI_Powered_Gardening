@@ -106,7 +106,7 @@ export function IntroductionSection() {
             >
               <div className="relative w-20 h-20 animate-float">
                 <Image
-                  src="/images/lotus-neural.png"
+                  src="/images/whale.png"
                   alt="AI Assistant"
                   fill
                   className="object-contain"
@@ -151,7 +151,7 @@ export function IntroductionSection() {
               }`}
             >
               <Image
-                src="/images/organic-hands.png"
+                src="/images/lotus-neural.png"
                 alt="Connected botanical systems"
                 fill
                 className="object-cover group-hover:scale-105 transition-transform duration-700"

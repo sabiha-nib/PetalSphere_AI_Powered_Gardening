@@ -105,7 +105,7 @@ export function FutureSection() {
           }`}
         >
           <Image
-            src="/images/whale.png"
+            src="/images/robot-mascot.png"
             alt="Living garden ecosystem"
             fill
             className="object-cover object-center"

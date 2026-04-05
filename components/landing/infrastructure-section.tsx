@@ -244,7 +244,7 @@ export function InfrastructureSection() {
         }`}>
           <div className="relative h-64 lg:h-80 overflow-hidden rounded-lg group">
             <Image
-              src="/images/lotus-neural.png"
+              src="/images/robot-garden.png"
               alt="Organic data visualization"
               fill
               className="object-contain object-center group-hover:scale-105 transition-transform duration-700"
