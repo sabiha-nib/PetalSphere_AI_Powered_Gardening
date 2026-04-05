@@ -2,7 +2,7 @@
 
 import { useEffect, useState, useRef } from "react";
 
-const words = ["adapts", "learns", "evolves", "grows"];
+const words = ["observes", "interprets", "adapts", "evolves"];
 
 function BlurWord({ word, trigger }: { word: string; trigger: number }) {
   const letters = word.split("");
@@ -174,7 +174,7 @@ export function HeroSection() {
         >
           <span className="inline-flex items-center gap-3 text-sm font-mono text-white/60">
             <span className="w-8 h-px bg-white/30" />
-            AI-powered intelligence for smart gardening
+            An exploration of artificial intelligence in horticulture
           </span>
         </div>
         
@@ -185,9 +185,9 @@ export function HeroSection() {
               isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
             }`}
           >
-            <span className="block whitespace-nowrap">Where nature learns,</span>
+            <span className="block whitespace-nowrap">When data meets soil,</span>
             <span className="block whitespace-nowrap">
-              intelligence{" "}
+              knowledge{" "}
               <span className="relative inline-block">
                 <BlurWord word={words[wordIndex]} trigger={wordIndex} />
               </span>
@@ -205,9 +205,9 @@ export function HeroSection() {
       >
         <div className="max-w-[1400px] mx-auto flex items-start gap-10 lg:gap-20">
           {[
-            { value: "40%", label: "less water usage" },
-            { value: "24/7", label: "AI plant monitoring" },
-            { value: "Real-time", label: "environmental analysis" },
+            { value: "Multi-spectral", label: "sensing systems" },
+            { value: "Continuous", label: "environmental data" },
+            { value: "Adaptive", label: "learning algorithms" },
           ].map((stat) => (
             <div key={stat.label} className="flex flex-col gap-2">
               <span className="text-3xl lg:text-4xl font-display text-white">{stat.value}</span>

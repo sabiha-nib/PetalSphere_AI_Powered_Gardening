@@ -5,39 +5,39 @@ import { useEffect, useRef, useState } from "react";
 const steps = [
   {
     number: "01",
-    title: "Observe",
-    subtitle: "the garden",
-    description: "Sensors continuously monitor soil moisture, light levels, temperature, and plant health across your entire garden ecosystem.",
-    code: `sensors.collect({
-  soil: 'moisture, pH, nutrients',
-  air: 'temp, humidity, CO2',
-  light: 'intensity, spectrum',
-  interval: '5min'
+    title: "Sense",
+    subtitle: "data acquisition",
+    description: "Transducers convert physical phenomena into electrical signals. Soil moisture appears as capacitance changes. Temperature manifests as resistance variations. Light intensity becomes photocurrent. Each sensor generates a time series of measurements.",
+    code: `// Data acquisition layer
+sensors.stream({
+  channels: ['soil', 'air', 'light'],
+  frequency: 'continuous',
+  resolution: 'high'
 })`,
   },
   {
     number: "02",
-    title: "Analyze",
-    subtitle: "the data",
-    description: "AI processes environmental data, identifies patterns, and compares conditions against optimal growth parameters for each plant species.",
-    code: `ai.analyze({
-  data: gardenSensors,
-  models: ['plant-health', 'growth'],
-  compare: plantDatabase,
-  detect: 'anomalies'
+    title: "Process",
+    subtitle: "pattern extraction",
+    description: "Raw signals pass through preprocessing pipelines: noise reduction, normalization, feature extraction. Neural networks identify patterns in the processed data. Statistical models quantify relationships between variables and outcomes.",
+    code: `// Feature processing pipeline
+ml.process({
+  input: sensorStreams,
+  transforms: ['normalize', 'extract'],
+  models: ['cnn', 'regression']
 })`,
   },
   {
     number: "03",
-    title: "Act",
-    subtitle: "& learn",
-    description: "Systems execute precise adjustments to irrigation, lighting, and climate. Results feed back to improve future decisions.",
-    code: `garden.optimize({
-  irrigation: 'adaptive',
-  lighting: 'spectrum-tuned',
-  feedback: true
-})
-// Water saved today: 12.4L`,
+    title: "Respond",
+    subtitle: "adaptive control",
+    description: "Processed information triggers actuator commands. Valves modulate water flow. LED drivers adjust light spectra. Ventilation systems regulate air exchange. Each intervention becomes input for subsequent analysis cycles.",
+    code: `// Control loop execution
+control.execute({
+  actions: computed,
+  feedback: enabled,
+  logging: true
+})`,
   },
 ];
 
@@ -81,16 +81,16 @@ export function HowItWorksSection() {
             <div className={`transition-all duration-1000 ${isVisible ? "translate-x-0 opacity-100" : "-translate-x-12 opacity-0"}`}>
               <span className="inline-flex items-center gap-3 text-sm font-mono text-white/40 mb-8">
                 <span className="w-12 h-px bg-white/20" />
-                The Process
+                The Cycle
               </span>
             </div>
             
             <h2 className={`text-6xl md:text-7xl lg:text-[128px] font-display tracking-tight leading-[0.85] transition-all duration-1000 delay-100 ${
               isVisible ? "translate-y-0 opacity-100" : "translate-y-16 opacity-0"
             }`}>
-              <span className="block">Observe.</span>
-              <span className="block text-white/30">Analyze.</span>
-              <span className="block text-white/10">Grow.</span>
+              <span className="block">Sense.</span>
+              <span className="block text-white/30">Process.</span>
+              <span className="block text-white/10">Respond.</span>
             </h2>
           </div>
 

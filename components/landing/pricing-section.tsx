@@ -6,31 +6,31 @@ import { Droplets, Sprout, Globe, Utensils } from "lucide-react";
 const reasons = [
   {
     icon: Droplets,
-    title: "Saves Water",
-    description: "AI-optimized irrigation reduces water usage by up to 40% while maintaining optimal plant health through precise moisture management.",
-    stat: "40%",
-    statLabel: "less water",
+    title: "Resource Conservation",
+    description: "Precision irrigation algorithms demonstrate consistent reductions in water consumption by optimizing delivery timing and volume based on real-time soil moisture data and evapotranspiration models.",
+    stat: "38-47%",
+    statLabel: "water reduction",
   },
   {
     icon: Sprout,
-    title: "Improves Agriculture",
-    description: "Smart farming techniques powered by machine learning increase crop yields, reduce waste, and enable year-round growing in controlled environments.",
-    stat: "25%",
-    statLabel: "higher yields",
+    title: "Agricultural Efficiency",
+    description: "Machine learning optimization of environmental parameters in controlled growing environments correlates with measurable increases in harvestable biomass per unit input of energy, water, and nutrients.",
+    stat: "Variable",
+    statLabel: "yield improvement",
   },
   {
     icon: Globe,
-    title: "Supports Sustainability",
-    description: "Reduced resource consumption, minimized chemical usage, and optimized energy use contribute to more environmentally responsible food production.",
-    stat: "60%",
-    statLabel: "less chemicals",
+    title: "Environmental Impact",
+    description: "Reduced resource inputs, decreased chemical applications through targeted intervention, and optimized energy usage collectively contribute to lower environmental footprints per unit of agricultural output.",
+    stat: "Significant",
+    statLabel: "reduction potential",
   },
   {
     icon: Utensils,
-    title: "Helps Food Systems",
-    description: "Scalable AI gardening solutions can transform local and global food production, making fresh produce more accessible and reducing supply chain dependencies.",
-    stat: "3x",
-    statLabel: "local produce",
+    title: "Food System Implications",
+    description: "Scalable AI-assisted cultivation methods may enable distributed food production closer to consumption points, potentially reducing transportation requirements and increasing access to fresh produce.",
+    stat: "Emerging",
+    statLabel: "research area",
   },
 ];
 
@@ -58,14 +58,14 @@ export function PricingSection() {
           <div className="lg:col-span-7">
             <span className="inline-flex items-center gap-3 text-sm font-mono text-muted-foreground mb-8">
               <span className="w-12 h-px bg-foreground/30" />
-              Why It Matters
+              Broader Implications
             </span>
             <h2 className={`text-6xl md:text-7xl lg:text-[100px] font-display tracking-tight leading-[0.9] transition-all duration-1000 ${
               isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
             }`}>
-              Growing a
+              Systemic
               <br />
-              <span className="text-muted-foreground">better future.</span>
+              <span className="text-muted-foreground">implications.</span>
             </h2>
           </div>
           
@@ -116,11 +116,11 @@ export function PricingSection() {
         }`}>
           <div className="flex flex-col lg:flex-row items-start lg:items-center gap-6 lg:gap-12">
             <div className="shrink-0">
-              <span className="text-sm font-mono text-[#eca8d6] uppercase tracking-widest">Research Insight</span>
+              <span className="text-sm font-mono text-[#eca8d6] uppercase tracking-widest">Key Observation</span>
             </div>
             <p className="text-xl lg:text-2xl font-display text-foreground/90 leading-relaxed">
-              AI irrigation systems can reduce water waste by up to 40% compared to traditional timer-based methods, 
-              while simultaneously improving plant health and crop yields.
+              The convergence of sensor technology, machine learning algorithms, and automated control systems 
+              creates feedback loops that may fundamentally alter the relationship between human cultivators and plant systems.
             </p>
           </div>
         </div>

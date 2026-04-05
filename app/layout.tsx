@@ -21,8 +21,8 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: 'The Role of Artificial Intelligence in Gardening',
-  description: 'Explore how AI transforms gardens through data, automation, and adaptive systems. A scientific journey where nature learns and intelligence grows.',
+  title: 'The Role of Artificial Intelligence in Gardening | A Scientific Exploration',
+  description: 'An investigation into how computational systems, machine learning algorithms, and sensor networks are being applied to horticultural cultivation. A research-driven exploration of AI-assisted plant growing.',
   generator: 'v0.app',
 }
 

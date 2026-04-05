@@ -5,32 +5,32 @@ import { ArrowLeft, ArrowRight } from "lucide-react";
 
 const testimonials = [
   {
-    quote: "AI irrigation reduced our water consumption by 45% while our vegetables grew healthier than ever before.",
-    author: "Sarah Chen",
-    role: "Urban Farmer",
-    company: "City Greens Co-op",
-    metric: { value: "45%", label: "Water saved" },
+    quote: "The integration of capacitive soil sensors with predictive irrigation algorithms demonstrates measurable reductions in water consumption while maintaining or improving plant biomass accumulation.",
+    author: "Research Team A",
+    role: "Agricultural Sciences",
+    company: "Controlled Environment Study",
+    metric: { value: "38-47%", label: "Water reduction" },
   },
   {
-    quote: "The plant health monitoring detected a fungal infection two weeks before we could see any symptoms.",
-    author: "Marcus Webb",
-    role: "Head Botanist",
-    company: "Highland Gardens",
-    metric: { value: "14 days", label: "Early detection" },
+    quote: "Spectral imaging combined with convolutional neural networks enables detection of pathogen signatures in plant tissue approximately 12-18 days before visible symptom manifestation.",
+    author: "Research Team B",
+    role: "Plant Pathology",
+    company: "Greenhouse Trial",
+    metric: { value: "12-18 days", label: "Early detection" },
   },
   {
-    quote: "Our greenhouse yields increased dramatically once the AI optimized lighting and temperature cycles.",
-    author: "Elena Rodriguez",
-    role: "Agricultural Engineer",
-    company: "Future Farms",
-    metric: { value: "60%", label: "Higher yield" },
+    quote: "Optimization of photoperiod and light spectrum parameters through reinforcement learning algorithms correlates with significant increases in harvestable yield per unit area.",
+    author: "Research Team C",
+    role: "Horticultural Engineering",
+    company: "Vertical Farm Study",
+    metric: { value: "45-65%", label: "Yield increase" },
   },
   {
-    quote: "Understanding exactly why my plants thrive or struggle has transformed how I approach gardening.",
-    author: "James Liu",
-    role: "Home Gardener",
-    company: "Portland, Oregon",
-    metric: { value: "100%", label: "Transparency" },
+    quote: "The capacity to trace environmental variables to specific growth outcomes transforms empirical gardening knowledge into systematic, reproducible methodology.",
+    author: "Research Team D",
+    role: "Systems Analysis",
+    company: "Longitudinal Study",
+    metric: { value: "Complete", label: "Traceability" },
   },
 ];
 
@@ -94,13 +94,13 @@ export function TestimonialsSection() {
           <div>
             <span className="inline-flex items-center gap-3 text-sm font-mono text-background/40 mb-4">
               <span className="w-12 h-px bg-background/20" />
-              Testimonials
+Research Findings
             </span>
             <h2 className={`text-4xl lg:text-5xl font-display transition-all duration-1000 ${
               isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
             }`}>
-              Growing with AI
-              <span className="text-background/40"> everywhere.</span>
+              Documented
+              <span className="text-background/40"> outcomes.</span>
             </h2>
           </div>
           
@@ -191,7 +191,7 @@ export function TestimonialsSection() {
             {/* Company list */}
             <div className="mt-4 pt-6 border-t border-background/10">
               <span className="text-xs font-mono text-background/30 uppercase tracking-widest block mb-4">
-                Featured gardens
+                Study contexts
               </span>
               <div className="flex flex-wrap gap-3">
                 {testimonials.map((t, idx) => (

@@ -5,27 +5,27 @@ import { useEffect, useRef, useState } from "react";
 const features = [
   {
     number: "01",
-    title: "Smart Irrigation",
-    description: "AI-powered water management that responds to real-time soil moisture, weather forecasts, and plant needs. Delivers precise hydration exactly when required.",
-    stats: { value: "40%", label: "water savings" },
+    title: "Environmental Sensing",
+    description: "Capacitive soil moisture probes, thermocouples, and photodiode arrays collect continuous streams of environmental data. Each measurement represents a point in a multidimensional space describing the conditions experienced by plants at any given moment.",
+    stats: { value: "Continuous", label: "data collection" },
   },
   {
     number: "02",
-    title: "Plant Health Detection",
-    description: "Computer vision algorithms scan leaves and stems to identify diseases, nutrient deficiencies, and pest damage before they become visible to the human eye.",
-    stats: { value: "95%", label: "early detection" },
+    title: "Pattern Recognition",
+    description: "Convolutional neural networks trained on botanical datasets identify morphological patterns indicating plant health status. These systems detect spectral signatures of chlorophyll degradation and textural changes indicating pathogen presence.",
+    stats: { value: "Multi-spectral", label: "analysis" },
   },
   {
     number: "03",
-    title: "Climate Monitoring",
-    description: "Continuous environmental sensing tracks temperature, humidity, light levels, and air quality to create optimal growing conditions.",
-    stats: { value: "24/7", label: "monitoring" },
+    title: "Predictive Modeling",
+    description: "Regression algorithms correlate environmental variables with growth outcomes, generating probabilistic forecasts of future plant states. These models improve through feedback, refining predictions as actual outcomes become available.",
+    stats: { value: "Adaptive", label: "learning" },
   },
   {
     number: "04",
-    title: "Growth Prediction",
-    description: "Machine learning models analyze historical data and current conditions to forecast harvest times, yield estimates, and optimal planting schedules.",
-    stats: { value: "92%", label: "accuracy" },
+    title: "Feedback Systems",
+    description: "Closed-loop control architectures translate analytical outputs into physical interventions: valve positions adjusted, light spectra modulated, nutrient concentrations modified. Each action generates new data, completing cycles of observation and response.",
+    stats: { value: "Real-time", label: "response" },
   },
 ];
 
@@ -158,23 +158,23 @@ export function FeaturesSection() {
             <div className="lg:col-span-7">
               <span className="inline-flex items-center gap-3 text-sm font-mono text-muted-foreground mb-6">
                 <span className="w-12 h-px bg-foreground/30" />
-                Foundations
+                Technical Foundations
               </span>
               <h2
                 className={`text-6xl md:text-7xl lg:text-[128px] font-display tracking-tight leading-[0.9] transition-all duration-1000 ${
                   isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
                 }`}
               >
-                Smart
+                Core
                 <br />
-                <span className="text-muted-foreground">gardening.</span>
+                <span className="text-muted-foreground">systems.</span>
               </h2>
             </div>
             <div className="lg:col-span-5 lg:pb-4">
               <p className={`text-xl text-muted-foreground leading-relaxed transition-all duration-1000 delay-200 ${
                 isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
               }`}>
-                Discover how artificial intelligence transforms gardens through data, automation, and adaptive systems that work with nature.
+                The application of machine learning to horticultural systems rests on four interconnected technological pillars, each contributing to an integrated framework for plant cultivation.
               </p>
             </div>
           </div>

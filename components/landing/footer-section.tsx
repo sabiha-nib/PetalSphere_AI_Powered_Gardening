@@ -4,22 +4,22 @@ import { ArrowUpRight } from "lucide-react";
 import { useEffect, useRef } from "react";
 
 const footerLinks = {
-  Explore: [
-    { name: "Smart Gardening", href: "#features" },
-    { name: "The Process", href: "#how-it-works" },
-    { name: "Why It Matters", href: "#pricing" },
-    { name: "Ecosystem", href: "#integrations" },
+  Chapters: [
+    { name: "Technical Foundations", href: "#features" },
+    { name: "Methodology", href: "#how-it-works" },
+    { name: "Research Context", href: "#science" },
+    { name: "Future Directions", href: "#future" },
   ],
-  Learn: [
-    { name: "The Science", href: "#science" },
-    { name: "Research", href: "#" },
+  Research: [
+    { name: "Scientific Background", href: "#science" },
     { name: "Case Studies", href: "#" },
-    { name: "Resources", href: "#" },
+    { name: "Data Sources", href: "#" },
+    { name: "Bibliography", href: "#" },
   ],
   About: [
-    { name: "Our Mission", href: "#" },
-    { name: "Blog", href: "#" },
-    { name: "Team", href: "#" },
+    { name: "Research Goals", href: "#" },
+    { name: "Methodology", href: "#" },
+    { name: "Contributors", href: "#" },
     { name: "Contact", href: "#" },
   ],
   Legal: [
@@ -115,12 +115,12 @@ export function FooterSection() {
             {/* Brand Column */}
             <div className="col-span-2">
               <a href="#" className="inline-flex items-center gap-2 mb-6">
-                <span className="text-2xl font-display text-white">AI Garden</span>
+                <span className="text-2xl font-display text-white">AI + Horticulture</span>
                 <span className="text-xs text-white/40 font-mono">TM</span>
               </a>
 
               <p className="text-white/50 leading-relaxed mb-8 max-w-xs text-sm">
-                Exploring the role of artificial intelligence in gardening. Where nature learns and intelligence grows.
+                An exploration of how computational systems intersect with botanical cultivation. A scientific investigation into the emerging field of AI-assisted horticulture.
               </p>
 
               {/* Social Links */}
@@ -167,13 +167,13 @@ export function FooterSection() {
         {/* Bottom Bar */}
         <div className="py-8 border-t border-white/10 flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-sm text-white/30">
-            &copy; 2026 AI Garden. An exploration of nature and technology.
+            &copy; 2026 AI + Horticulture Research. A scientific exploration.
           </p>
 
           <div className="flex items-center gap-4 text-sm text-white/30">
             <span className="flex items-center gap-2">
               <span className="w-2 h-2 rounded-full bg-[#eca8d6]" />
-              All systems growing
+              Research ongoing
             </span>
           </div>
         </div>
