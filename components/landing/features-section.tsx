@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import Image from "next/image";
 
 const features = [
   {
@@ -8,24 +9,28 @@ const features = [
     title: "Environmental Sensing",
     description: "Capacitive soil moisture probes, thermocouples, and photodiode arrays collect continuous streams of environmental data. Each measurement represents a point in a multidimensional space describing the conditions experienced by plants at any given moment.",
     stats: { value: "Continuous", label: "data collection" },
+    color: "#eca8d6",
   },
   {
     number: "02",
     title: "Pattern Recognition",
     description: "Convolutional neural networks trained on botanical datasets identify morphological patterns indicating plant health status. These systems detect spectral signatures of chlorophyll degradation and textural changes indicating pathogen presence.",
     stats: { value: "Multi-spectral", label: "analysis" },
+    color: "#7dd3fc",
   },
   {
     number: "03",
     title: "Predictive Modeling",
     description: "Regression algorithms correlate environmental variables with growth outcomes, generating probabilistic forecasts of future plant states. These models improve through feedback, refining predictions as actual outcomes become available.",
     stats: { value: "Adaptive", label: "learning" },
+    color: "#a5f3fc",
   },
   {
     number: "04",
     title: "Feedback Systems",
     description: "Closed-loop control architectures translate analytical outputs into physical interventions: valve positions adjusted, light spectra modulated, nutrient concentrations modified. Each action generates new data, completing cycles of observation and response.",
     stats: { value: "Real-time", label: "response" },
+    color: "#fbbf24",
   },
 ];
 
@@ -103,7 +108,7 @@ function ParticleVisualization() {
 
         ctx.beginPath();
         ctx.arc(x, y, p.radius + pulse * 0.8, 0, Math.PI * 2);
-        ctx.fillStyle = `rgba(255, 255, 255, ${alpha})`;
+        ctx.fillStyle = `rgba(236, 168, 214, ${alpha})`;
         ctx.fill();
       });
 
@@ -131,6 +136,7 @@ function ParticleVisualization() {
 export function FeaturesSection() {
   const [isVisible, setIsVisible] = useState(false);
   const [activeFeature, setActiveFeature] = useState(0);
+  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
   const sectionRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -184,7 +190,7 @@ export function FeaturesSection() {
         <div className="grid lg:grid-cols-12 gap-4 lg:gap-6">
           {/* Large feature card */}
           <div 
-            className={`lg:col-span-12 relative bg-black border border-foreground/10 min-h-[500px] overflow-hidden group transition-all duration-700 flex ${
+            className={`lg:col-span-12 relative bg-black border border-foreground/10 min-h-[500px] overflow-hidden group transition-all duration-700 flex hover:border-[#eca8d6]/30 ${
               isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-12"
             }`}
             onMouseEnter={() => setActiveFeature(0)}
@@ -193,7 +199,7 @@ export function FeaturesSection() {
             <div className="relative flex-1 p-8 lg:p-12 bg-black">
               <ParticleVisualization />
               <div className="relative z-10">
-                <span className="font-mono text-sm text-muted-foreground">{features[0].number}</span>
+                <span className="font-mono text-sm text-[#eca8d6]">{features[0].number}</span>
                 <h3 className="text-3xl lg:text-4xl font-display mt-4 mb-6 group-hover:translate-x-2 transition-transform duration-500">
                   {features[0].title}
                 </h3>
@@ -201,7 +207,7 @@ export function FeaturesSection() {
                   {features[0].description}
                 </p>
                 <div>
-                  <span className="text-5xl lg:text-6xl font-display">{features[0].stats.value}</span>
+                  <span className="text-5xl lg:text-6xl font-display bg-gradient-to-r from-white to-white/70 bg-clip-text">{features[0].stats.value}</span>
                   <span className="block text-sm text-muted-foreground font-mono mt-2">{features[0].stats.label}</span>
                 </div>
               </div>
@@ -213,12 +219,84 @@ export function FeaturesSection() {
                 src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Upscaled%20Image%20%2812%29-ng3RrNnsPMJ5CrtOjcPTmhHg01W11q.png"
                 alt=""
                 aria-hidden="true"
-                className="absolute inset-0 w-full h-full object-cover object-center"
+                className="absolute inset-0 w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700"
                 style={{ transform: "scaleX(-1)" }}
               />
               {/* Fade left edge into black */}
               <div className="absolute inset-0 bg-gradient-to-r from-black via-transparent to-transparent" />
             </div>
+          </div>
+
+          {/* Secondary feature cards */}
+          {features.slice(1).map((feature, index) => (
+            <div 
+              key={feature.number}
+              className={`lg:col-span-4 relative p-8 lg:p-10 border bg-foreground/[0.02] transition-all duration-500 cursor-default overflow-hidden ${
+                isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+              }`}
+              style={{ 
+                transitionDelay: `${(index + 1) * 100}ms`,
+                borderColor: hoveredIndex === index ? `${feature.color}50` : "rgba(var(--foreground-rgb), 0.1)",
+              }}
+              onMouseEnter={() => setHoveredIndex(index)}
+              onMouseLeave={() => setHoveredIndex(null)}
+            >
+              {/* Animated gradient background */}
+              <div 
+                className="absolute inset-0 transition-opacity duration-500"
+                style={{
+                  background: `radial-gradient(circle at 0% 0%, ${feature.color}15, transparent 50%)`,
+                  opacity: hoveredIndex === index ? 1 : 0,
+                }}
+              />
+
+              <div className="relative z-10">
+                <span 
+                  className="font-mono text-sm transition-colors duration-300"
+                  style={{ color: hoveredIndex === index ? feature.color : "var(--muted-foreground)" }}
+                >
+                  {feature.number}
+                </span>
+                <h3 className="text-2xl font-display mt-4 mb-4 group-hover:translate-x-1 transition-transform duration-300">{feature.title}</h3>
+                <p className="text-muted-foreground leading-relaxed text-sm mb-6">{feature.description}</p>
+                <div className="pt-6 border-t border-foreground/10">
+                  <span 
+                    className="text-3xl font-display transition-colors duration-300"
+                    style={{ color: hoveredIndex === index ? feature.color : "inherit" }}
+                  >
+                    {feature.stats.value}
+                  </span>
+                  <span className="block text-xs text-muted-foreground font-mono mt-1">{feature.stats.label}</span>
+                </div>
+              </div>
+
+              {/* Animated border line */}
+              <div 
+                className="absolute bottom-0 left-0 h-[2px] transition-all duration-500"
+                style={{
+                  background: feature.color,
+                  width: hoveredIndex === index ? "100%" : "0%",
+                }}
+              />
+            </div>
+          ))}
+        </div>
+
+        {/* Robot garden image showcase */}
+        <div className={`mt-12 relative h-64 lg:h-80 overflow-hidden rounded-lg transition-all duration-1000 delay-500 ${
+          isVisible ? "opacity-100" : "opacity-0"
+        }`}>
+          <Image
+            src="/images/robot-garden.png"
+            alt="AI-powered garden monitoring"
+            fill
+            className="object-cover object-center"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent" />
+          <div className="absolute bottom-6 left-6 right-6">
+            <p className="text-sm text-foreground/70 font-mono">
+              Where artificial intelligence meets botanical cultivation
+            </p>
           </div>
         </div>
       </div>
