@@ -2,7 +2,6 @@
 
 import { useEffect, useRef, useState } from "react";
 import { Cpu, Eye, Cloud, TrendingUp } from "lucide-react";
-import Image from "next/image";
 
 const scienceTopics = [
   {
@@ -98,27 +97,7 @@ export function ScienceSection() {
             </p>
           </div>
 
-          {/* Robot mascot */}
-          <div 
-            className={`relative h-48 lg:h-64 transition-all duration-1000 delay-300 ${
-              isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-            }`}
-          >
-            <div className="absolute inset-0 flex items-center justify-center">
-              <div className="relative w-40 h-40 animate-float">
-                <Image
-                  src="/images/whale.png"
-                  alt="AI Assistant"
-                  fill
-                  className="object-contain drop-shadow-2xl"
-                />
-              </div>
-            </div>
-            {/* Glowing ring around robot */}
-            <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-              <div className="w-48 h-48 rounded-full border border-[#eca8d6]/20 animate-pulse" />
-            </div>
-          </div>
+
         </div>
 
         {/* Science cards grid with enhanced effects */}

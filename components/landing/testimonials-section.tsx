@@ -2,7 +2,6 @@
 
 import { useEffect, useState, useRef } from "react";
 import { ArrowLeft, ArrowRight } from "lucide-react";
-import Image from "next/image";
 
 const insights = [
   {
@@ -222,18 +221,7 @@ export function TestimonialsSection() {
           </div>
         </div>
 
-        {/* Bottom image showcase */}
-        <div className={`mt-20 transition-all duration-1000 delay-500 ${isVisible ? "opacity-100" : "opacity-0"}`}>
-          <div className="relative h-64 lg:h-80 rounded-lg overflow-hidden">
-            <Image
-              src="/images/whale.png"
-              alt="Neural lotus network"
-              fill
-              className="object-contain object-center"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-foreground via-transparent to-transparent" />
-          </div>
-        </div>
+
       </div>
 
       <style jsx>{`

@@ -98,24 +98,7 @@ export function IntroductionSection() {
               </p>
             </div>
 
-            {/* Robot mascot floating */}
-            <div 
-              className={`mt-12 flex items-center gap-6 transition-all duration-1000 delay-500 ${
-                isVisible ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-8"
-              }`}
-            >
-              <div className="relative w-20 h-20 animate-float">
-                <Image
-                  src="/images/whale.png"
-                  alt="AI Assistant"
-                  fill
-                  className="object-contain"
-                />
-              </div>
-              <p className="text-sm text-muted-foreground italic">
-                Meet your guide through this exploration of artificial intelligence in horticulture.
-              </p>
-            </div>
+
           </div>
 
           {/* Side content - Key concept with hover effect */}
