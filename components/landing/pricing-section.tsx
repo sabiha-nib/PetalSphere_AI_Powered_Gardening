@@ -74,19 +74,7 @@ export function PricingSection() {
             </h2>
           </div>
           
-          <div className="lg:col-span-5 relative p-0 h-80 lg:h-auto flex items-center justify-center">
-            <div className={`relative w-64 h-64 transition-all duration-1000 delay-100 ${
-              isVisible ? "opacity-100 scale-100" : "opacity-0 scale-90"
-            }`}>
-              {/* Animated glow ring */}
-              <div className="absolute inset-0 rounded-full bg-gradient-to-r from-[#eca8d6]/30 via-[#7dd3fc]/30 to-[#eca8d6]/30 blur-xl animate-pulse" />
-              <img
-src="/images/lotus-neural.png"
-          alt="AI Assistant"
-                className="relative w-full h-full object-contain"
-              />
-            </div>
-          </div>
+
         </div>
 
         {/* Impact cards */}
