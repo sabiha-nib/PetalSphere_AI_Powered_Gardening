@@ -3,7 +3,6 @@
 import { useEffect, useRef, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { RotateCcw, Sparkles, Globe, Network } from "lucide-react";
-import Image from "next/image";
 
 const futures = [
   {
@@ -98,19 +97,7 @@ export function FutureSection() {
       </div>
 
       <div className="relative z-10 max-w-[1400px] mx-auto px-6 lg:px-12">
-        {/* Connected trees image as hero */}
-        <div 
-          className={`relative h-64 lg:h-80 mb-16 overflow-hidden rounded-lg transition-all duration-1000 ${
-            isVisible ? "opacity-100 scale-100" : "opacity-0 scale-95"
-          }`}
-        >
-          <Image
-            src="/images/robot-mascot.png"
-            alt="Living garden ecosystem"
-            fill
-            className="object-cover object-center"
-          />
-        </div>
+
 
         {/* Header */}
         <div className="mb-20 text-center">
