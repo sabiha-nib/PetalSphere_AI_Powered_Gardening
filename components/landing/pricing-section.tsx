@@ -193,8 +193,8 @@ export function PricingSection() {
         
         {/* The image */}
         <img
-          src="/images/robot-mascot.png"
-          alt="Living garden ecosystem with glowing connections"
+          src="/images/connected-trees.png"
+          alt="Data flow visualization through connected networks"
           className="relative w-full h-auto max-h-[500px] object-cover object-center"
         />
         
